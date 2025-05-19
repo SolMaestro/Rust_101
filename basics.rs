@@ -16,7 +16,21 @@ let my_bool = true; // Like most other programming languages, this uevalutes a v
 let other_bool = false // like true, this evalutes a value if the condition is false. Bools are mostly used with conditional control flows.
 
 let my_char = 'A' //Char is a primitive alphabetic type, you can represent letters including korean and chinese characters, emojis. 
-                  //PS. They are declared using single quotes as opposed to strings which use double qoutes.
+                  //PS. They are declared using single quotes as opposed to strings which use double quotes.
+
+//Arithmetic Operations in Rust
+let sum = 50 + 150; //Addition, This prints 200. the type is i32 because that is the default rust type inference for integers.
+
+let difference = 9.5 - 4.3; //Subtraction, this prints 5.2. The type is f64 as inferenced by Rust for float pointing numbers.
+
+let product = 500_000_000 * 200_000_000; /*Multiplication, this particular code does not compile because the result of the expression cannot fit into an i32,
+                                          so it prints an error message and exits. In short, this error is called arithmetic overflow. You can solve this by explicitly adjusting
+                                          the i32 to i64 or i128  as the case may be.*/
+
+let quotient = 79.1 / 12.3 //Division, this prints 6.430894308943088. To reduce the precision values, the variable type can be explictly annonated with f32.
+
+let remainder = 73 % 5; //This is a modulo operation which finds a remainder after dividing one number by another. This code prints 3.
+
 
 
 
@@ -25,6 +39,6 @@ fn main() {
   let shadow =  50_000_000; //Yes! you can use underscores to seperate number values, to make it readable.
   let shadow = 100_000_000;
 
-  println!("My shadow is {shadow}"); //This code prints 100_000_000, because it shadows the first "shadow" variable.
+  println!("My shadow is {shadow}"); //This code prints 100_000_000, because it shadows the first variable shadow.
   println!("My shadow is also {}", shadow); //You can also print the code using this format.
 }
