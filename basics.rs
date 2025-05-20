@@ -40,5 +40,17 @@ fn main() {
   let shadow = 100_000_000;
 
   println!("My shadow is {shadow}"); //This code prints 100_000_000, because it shadows the first variable shadow.
-  println!("My shadow is also {}", shadow); //You can also print the code using this format.
+  println!("My shadow is also {}", shadow); //You can also print the variables using this format.
+}
+
+//Mutability in Rust: By default, the values in variables in rust cannot be changed except you declare it as mutable using the keyword "mut".
+fn main() {
+  let my_value: u8 = 155;
+  my_value = 255;
+  println!("My value is {}", my_value); /*This code block prints an error by the compiler because you can't change the values without declaring it as mutable.
+                                         Just add mut between let and my_value, the code should now print without errors*/
+
+  let mut my_string = "My name is Rust"; //This string variable is declared as mutable by using the keyword mut. like other types in Rust, strings are inferenced as &str (&'static str) by default.
+  my_string = 555;
+  println!("My string is {my_string}"); //Even though my_string was declared as mutable by using the keyword "mut", this code also prints an error by the compiler because the types are misplaced. Although there are methods you can use to switch between types
 }
