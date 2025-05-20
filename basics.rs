@@ -54,3 +54,12 @@ fn main() {
   my_string = 555;
   println!("My string is {my_string}"); //Even though my_string was declared as mutable by using the keyword "mut", this code also prints an error by the compiler because the types are misplaced. Although there are methods you can use to switch between types
 }
+
+//CONSTANT variables in Rust are declared in capital letters and mostly as a global variable that cannot change throughout the program lifetime.
+const MONTHS_OF_THE_YEAR: u8 = 12; //The programmer must declare the type or else the compiler will print an error message.
+
+
+//The ::MIN and ::MAX are constants provided by Rust primitive types which is used to check the minimum and maximum values integer types can hold.
+let maximum = i32::MAX; //This prints 2147483647.
+let minimum = u64::MIN; //This prints 0.
+
