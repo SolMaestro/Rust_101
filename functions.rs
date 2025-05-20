@@ -1,0 +1,1 @@
+//This file contains examples and basic concepts of functions in Rust.
