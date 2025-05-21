@@ -42,3 +42,22 @@ fn main() {
   other_function(55, 600); //functions can hold more than 1 argument as long as the parameters is specified when declaring the function.
   string_parameter("Rust Lang"); //This prints strings can also be in function parameters like Rust Lang.
 }
+
+//Functions with Return Values
+fn return_two() -> i32 { //Functions can return values to the code that calls them. the programmer declares their type after an arrow ->
+ 2  //this value ends without a semicolon since it returns the value 2.
+}
+
+fn early() -> u16 {
+  return 500; //Rust returns early when the programmer uses the keyword "return" before a value of the specified return type.
+  let value = 500 + 200; //Statements and expressions after the return keyword is unreachable.
+  let another = 700 + 100; //Lastly, the compiler will warn of these unused variables before printing the return value.
+}
+
+fn main() {
+  let my_return = return_two(); //Since the return_two function returns a variable, its totally valid to initialize a variable with the function.
+  println!("The value of my_return is {}", my_return); //This line prints The value of my_return is 2.
+
+  let my_early = early();
+  println!("We returned early with the value {}", my_early); //This prints We returned early with the value 500.
+}
