@@ -23,3 +23,22 @@ fn main() {
   println!("{my_print}"); //curly brackets can also hold variables and print it.
   println!("This is also valid but {my_print}"); //Adding letters and characters in the println! macro is also valid Rust code. guess what this prints?
 }
+
+//Function parameters.
+fn my_function(x: i32) { //This function accepts a parameter which we declared as an i32 but it could be anything as long as it corresponds with the argument passed to it.
+println!("The value of the parameter is {}", x);
+}
+
+fn other_function(x: u16, y: i32) { //The function above holds one parameter but it's also valid to declare two or more parameters in a function as long as you explicitly declare the type and pass the corresponding arguments correctly.
+  println!("functions can hold more parameters and are seperated by commas like {} and {}", x , y);
+}
+
+fn string_parameter(name: &str) { //Functions can also hold strings and any other valid type as parameters in Rust.
+  println!("strings can also be in function parameters like {name}.");
+}
+
+fn main() {
+  my_function(5); //5 is passed here as an argument to the function and it corresponds to the i32 declared in my_function.
+  other_function(55, 600); //functions can hold more than 1 argument as long as the parameters is specified when declaring the function.
+  string_parameter("Rust Lang"); //This prints strings can also be in function parameters like Rust Lang.
+}
