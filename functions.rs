@@ -24,6 +24,11 @@ fn main() {
   println!("This is also valid but {my_print}"); //Adding letters and characters in the println! macro is also valid Rust code. guess what this prints?
 }
 
+fn main() {
+  print!("\tThis adds a tab and \nPrints on a new line"); //adding /t to the print! macro adds a tab to the line and \n adds a new line to the print. note that the macro here is print!.
+  println!("Println! and not print!") //printing with println! macro automatically prints on a new line while the print! macro prints on same line. 
+}
+
 //Function parameters.
 fn my_function(x: i32) { //This function accepts a parameter which we declared as an i32 but it could be anything as long as it corresponds with the argument passed to it.
 println!("The value of the parameter is {}", x);
@@ -40,7 +45,7 @@ fn string_parameter(name: &str) { //Functions can also hold strings and any othe
 fn main() {
   my_function(5); //5 is passed here as an argument to the function and it corresponds to the i32 declared in my_function.
   other_function(55, 600); //functions can hold more than 1 argument as long as the parameters is specified when declaring the function.
-  string_parameter("Rust Lang"); //This prints strings can also be in function parameters like Rust Lang.
+  string_parameter("Rust Lang"); //This prints, strings can also be in function parameters like Rust Lang.
 }
 
 //Functions with Return Values
@@ -56,8 +61,17 @@ fn early() -> u16 {
 
 fn main() {
   let my_return = return_two(); //Since the return_two function returns a variable, its totally valid to initialize a variable with the function.
-  println!("The value of my_return is {}", my_return); //This line prints The value of my_return is 2.
+  println!("The value of my_return is {}", my_return); //This line prints, The value of my_return is 2.
 
   let my_early = early();
-  println!("We returned early with the value {}", my_early); //This prints We returned early with the value 500.
+  println!("We returned early with the value {}", my_early); //This prints, We returned early with the value 500.
+
+  let addition = add_operation(20, 20);
+  println!("The result of the addition is {}", addition); //This prints, The result of the addition is 240.
+}
+
+//Arithemetic operations with Functions and their Return values.
+fn add_operation(x: i32, y: i32) -> i32 { //This function accepts 2 parameters and returns a value.
+let add = x + y + 200; //arithemetic operation with the parameters.
+add //return the variable without a semicolon.
 }
