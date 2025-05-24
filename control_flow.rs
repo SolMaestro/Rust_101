@@ -73,8 +73,46 @@ let condition = false;
 let assign = if condition { //The programmer can also assign a value to a variable using control flows in Rust. 
   100 
 } else { //Since the expression above evaluates to false Rust assigns the value 200 to the variable.
-  200 //Remember that to return a value in Rust, the programmer excludes the semi-colon.
+  200 //Remember that to return a value in Rust, the programmer excludes the semi-colon. Also remember that the return values must be of same type, if we mismatch the types like returning a &str with an i32, the compiler will print an error message.
 }; //The semi-colon goes here instead, the end of the code block.
 println!("Assign holds the value {}", assign); //This prints `Assign holds the value 200`
 
 //LOOPS
+fn main() {
+  loop { //Loops are just simple ways to make a code print repeatedly till you tell it to stop.
+    println!("I just keep printing"); //This line keeps printing till we command it to stop by using the CTRL + C key.
+  }
+}
+
+fn main() {
+  let mut counter = 0; //Declares a mutable variable named counter.
+  loop { //Fortunately, Rust allows the programmer to explictly tell the compiler when to breakout of the code by using the keyword `break`.
+    counter += 1; //Keeps adding 1 to the counter variable.
+    println!("The counter is now {counter}"); //prints a line that tells the programmer about the counter.
+   if counter == 5 { //The programmer uses an if expression to determine when to breakout of the code.
+    break; //finally, the keyword `break`, breaks out of the code immediately the condition is met.
+   }
+  }
+}
+
+fn main() {
+  let mut counter1 = 0;
+  let mut counter2 = 0;
+  println!("Now entering first loop");
+  'first_loop: loop { //Rust allows the programmer to name a loop, which is helpful when you are in a loop that is inside another loop. This is possible by using a tick ` before the name.
+    counter1 += 1;
+    println!("First loop is now {counter1}");
+    if counter1 == 10 {
+        println!("Now entering second loop!");
+    'second_loop: loop { //This line starts a second loop inside the first loop.
+      counter2 += 1;
+      println!("Second loop is now {counter2}");
+      if counter2 == 10 {
+        break 'first_loop; //Lastly, this line exits the loop once the second loop counts to 10;
+      } else if counter2 == 20 { //The compiler never executes this line because the line above breaks out of the entire loop. Remember we're still inside the first loop.
+          break 'second_loop;
+      }
+      }
+    }
+    }
+  }
