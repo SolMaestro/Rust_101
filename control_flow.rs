@@ -3,7 +3,7 @@
 fn main() {
   let my_number = 255;
   if my_number == 256 { //The if expression is used to control the flow of programs, depending on conditions. this code simply checks if my_number is equal to 256.
-    println!("My number is 255"); //This code prints nothing because my_number is not equal to 256 and also because the if condition evaluates to false.
+    println!("My number is 255"); //This code doesnt execute because my_number is not equal to 256 and also because the if condition evaluates to false.
   } //end of if block.
 }
 
@@ -61,3 +61,20 @@ if married && exhausted { //Using the `AND` logical operator the expression eval
 } else {
   println!("I am neither married nor exhausted");
 }
+
+let not_equal = 800;
+if not_equal != 500 { //There's also a NOT operator that is also used in control flows. This simply translates to if not_equal is NOT equal to an integer or variable as the case may be, then perform some action.
+  println!("Number was something other than 500"); //The code executes because the expression is true.
+} else { //if not, it executes the next line.
+  println!("Number is {not_equal}");
+}
+
+let condition = false;
+let assign = if condition { //The programmer can also assign a value to a variable using control flows in Rust. 
+  100 
+} else { //Since the expression above evaluates to false Rust assigns the value 200 to the variable.
+  200 //Remember that to return a value in Rust, the programmer excludes the semi-colon.
+}; //The semi-colon goes here instead, the end of the code block.
+println!("Assign holds the value {}", assign); //This prints `Assign holds the value 200`
+
+//LOOPS
