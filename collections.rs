@@ -1,0 +1,1 @@
+//This file contains examples and code snippets about Rust collections and compound types.
