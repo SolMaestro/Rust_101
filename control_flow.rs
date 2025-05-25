@@ -40,6 +40,15 @@ if other_number > 500 { //the greater than symbol is also among the relational o
   println!("None of my numbers is greater or lesser!"); //As usual this line prints if all expressions above evaluates to false.
 }
 
+fn main() {
+  let modulo = 40;
+  if modulo % 10 == 0 { //The modulo operations are valid in Rust and helpful in control flow expressions. The modulo operation finds the remainder of a number when divided by another number. if the operation evaluates to true then Rust performs the required operation.
+    println!("This operation is correct"); //Since the operation above is true, the compiler prints this line.
+  } else { //if not, it executes this code block as usual.
+    println!("That's a wrong operation");
+  }
+}
+
 let my_number = 200;
 let last_number = 150;
 if my_number == 200 && last_number == 150 { //The double ampersands `&&` are Logical operators used to combine two or more expressions resulting in a true or false value. This called AND.
@@ -116,3 +125,31 @@ fn main() {
     }
     }
   }
+
+  //While loop
+  let mut counter = 0;
+  while counter < 5 { //The while loop is another loop that continues while a condition is true, For each loop, Rust will check whether it is still true. If it becomes false, Rust will stop the loop.
+    counter += 1; //This line adds 1 to the counter till counter gets to 5 and turns the while expression to false so the loop stops.
+    println!("Counter is now {counter}"); //Run this code to see the outcome.
+  }
+
+  //for loop
+  fn main() {
+    for number in 0..3 { //A for loop lets the programmer tell Rust what to do each time. Unlike the while loop that checks if a condition is true, the for loop stops after a certain number of times. Also the for loop use ranges often.
+      println!("The number is {}", number); //Think of `number` as a variable name, this line prints the texts and numbers starting from 0 and ends in 2 excluding the number 3.
+    }
+  }
+
+  fn main() {
+    for number in 0..=5 { //Adding the equals sign plus the number prints the text with the numbers inclusive.
+      println!("The number prints {number}"); //This prints the command with the numbers and the number 5 inclusive.
+    }
+  }
+
+  fn main() {
+    for _ in 0..3 { //The programmer can use the underscore if they don't need a variable name.
+      println!("Printing same thing three times!"); //The code prints same line 3 times without the numbers.
+    }
+  }
+
+
